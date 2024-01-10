@@ -1,3 +1,4 @@
+import DisplayVideo from "./components/DisplayVideo";
 import TestingForm from "./components/TestingForm";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <hr />
       <div>
         <TestingForm />
+        <DisplayVideo />
       </div>
     </div>
   );
