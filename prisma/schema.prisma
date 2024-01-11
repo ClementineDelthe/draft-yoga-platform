@@ -12,28 +12,11 @@ datasource db {
 }
 
 model Video {
-  id          String          @id @default(cuid())
+  id          String   @id @default(cuid())
   title       String
-  description String          @db.VarChar(255)
-  duration    Int
-  created_at  DateTime        @default(now())
-  updated_at  DateTime        @updatedAt
+  description String   @db.VarChar(255)
+  duration    String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
   url         String
-  categories  VideoCategory[]
-}
-
-model Category {
-  id     String          @id @default(cuid())
-  name   String
-  videos VideoCategory[]
-}
-
-model VideoCategory {
-  videoId    String
-  categoryId String
-
-  video    Video    @relation(fields: [videoId], references: [id])
-  category Category @relation(fields: [categoryId], references: [id])
-
-  @@id([videoId, categoryId])
 }
