@@ -3,7 +3,7 @@ import prisma from "../lib/prisma";
 
 const Video = async ({ params }) => {
   const id = params.id;
-  
+
   const video = await prisma.video.findUnique({
     where: { id: Number(id) },
   });
@@ -19,13 +19,9 @@ const Video = async ({ params }) => {
       <h1>{video.title}</h1>
       <p>{video.description}</p>
       {typeof video.id}
-      <DeleteButton videoId={video.id}/>
-
-
-
-
+      <DeleteButton videoId={video.id} />
     </div>
-  )
+  );
 };
 
 export default Video;
