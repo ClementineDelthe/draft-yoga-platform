@@ -23,7 +23,7 @@ export default function DeleteButton({ videoId }) {
   <div>
     <div>
       <button onClick={handleClick}>
-        <Trash size={32} className="text-black hover:text-emerald-500" />
+        <Trash size={24} className="text-black hover:text-emerald-500" />
       </button>
     </div>
   </div>

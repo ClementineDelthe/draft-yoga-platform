@@ -11,13 +11,17 @@ const DisplayVideo = async () => {
       <div className="grid lg:grid-cols-3 place-items-center mt-24">
         {videos.map((video) => (
           <Link key={video.id} href={`/${video.id}`}>
-            <div key={video.id} className="border rounded-lg px-4 py-4 my-2 relative bg-emerald-500 hover:bg-emerald-700">
-              <div className="absolute top-0 right-0">
+            <div key={video.id} className="max-w-sm bg-white border border-gray-200 rounded-lg shadow bg-gray-300 dark:border-gray-700 relative m-2">
+              <div className="p-5">
+                <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{video.title}</h1>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{video.description}</p>
               </div>
-              <h1 className="text-black">{video.title}</h1>
-              <p>{video.description}</p>
-              <video src={video.url} width="350" height="150" controls />
-              <DeleteButton videoId={video.id}/>
+              <div className="p-2">
+                <video src={video.url} width="350" height="150" controls />
+              </div>
+              <div className="absolute top-2 right-2">
+                <DeleteButton videoId={video.id}/>
+              </div>
 
             </div>
           </Link>
