@@ -1,4 +1,5 @@
 import DeleteButton from "../components/DeleteButton";
+import Editbutton from "../components/EditButton";
 import prisma from "../lib/prisma";
 
 const Video = async ({ params }) => {
@@ -20,6 +21,7 @@ const Video = async ({ params }) => {
       <p>{video.description}</p>
       {typeof video.id}
       <DeleteButton videoId={video.id} />
+      <Editbutton videoId={video.id}/>
     </div>
   );
 };
