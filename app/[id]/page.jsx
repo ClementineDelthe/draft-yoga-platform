@@ -10,7 +10,7 @@ const Video = async ({ params }) => {
   if (!video) {
     return (
       <div>
-        <p>chargement en cours...</p>
+        <p>Chargement en cours...</p>
       </div>
     );
   }
