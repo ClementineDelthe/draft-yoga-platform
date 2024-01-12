@@ -1,4 +1,4 @@
-export async function DELETE ({params}) {
+export async function DELETE (request, {params}) {
   const id = params.id
   if (!id) {
     return new Response("invalid id", {status: 400})

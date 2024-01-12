@@ -1,19 +1,19 @@
 "use client";
-
 import { Trash } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const DeleteButton = ({ videoId }) => {
-  console.log(videoId)
+
+export default function DeleteButton({ videoId }) {
+  console.log("button" + videoId + typeof videoId)
   const router = useRouter();
 
   async function handleClick() {
     try {
       await fetch(`/api/delete_video/${parseInt(videoId)}`, {
-        method: "DELETE",
+        method: 'DELETE',
       });
       router.push("/");
-      router.reload();
+      router.refresh();
     } catch (error) {
       console.error(error)
     }
@@ -29,5 +29,3 @@ const DeleteButton = ({ videoId }) => {
   </div>
   );
 };
-
-export default DeleteButton;

@@ -4,7 +4,7 @@ import TestingForm from "./components/TestingForm";
 
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container flex">
       <hr />
       <div>
         <CategoryBar />
